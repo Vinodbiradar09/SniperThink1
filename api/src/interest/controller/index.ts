@@ -6,6 +6,8 @@ const Interest = {
   async postInterest(req: Request, res: Response) {
     try {
       const { success, data } = ZodInterestSchema.safeParse(req.body);
+      console.log("body", req.body);
+      console.log("data", data);
       if (!success) {
         return res.status(400).json({
           message: "fields can't be empty",
@@ -17,7 +19,7 @@ const Interest = {
         data: {
           name: data.name,
           email: data.email,
-          selectedStep: data.step,
+          selectedStep: data.selectedStep,
         },
       });
       return res.status(201).json({
