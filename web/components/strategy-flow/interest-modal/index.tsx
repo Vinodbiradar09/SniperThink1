@@ -50,7 +50,6 @@ const InterestModal = ({ step, isOpen, onClose }: InterestModalProps) => {
 
   const handleSubmit = useCallback(async () => {
     if (!step) return;
-
     const { name, email } = formState;
 
     if (!name.trim() || !email.trim()) {
@@ -88,7 +87,10 @@ const InterestModal = ({ step, isOpen, onClose }: InterestModalProps) => {
             initial={{ opacity: 0, y: 32, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 32, scale: 0.98 }}
-            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] as const }}
+            transition={{
+              duration: 0.35,
+              ease: [0.22, 1, 0.36, 1] as const,
+            }}
             style={{
               position: "fixed",
               inset: 0,
@@ -96,14 +98,14 @@ const InterestModal = ({ step, isOpen, onClose }: InterestModalProps) => {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              padding: "1rem",
+              padding: "1.5rem",
               pointerEvents: "none",
             }}
           >
             <div
               style={{
                 width: "100%",
-                maxWidth: "32rem",
+                maxWidth: "34rem",
                 backgroundColor: "var(--surface)",
                 border: "1px solid var(--border-bright)",
                 pointerEvents: "auto",
@@ -128,7 +130,14 @@ const InterestModal = ({ step, isOpen, onClose }: InterestModalProps) => {
                 onClose={handleClose}
               />
 
-              <div className="flex flex-col gap-5 px-8 py-6">
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column" as const,
+                  gap: "1.5rem",
+                  padding: "2rem 2.5rem",
+                }}
+              >
                 <StatusMessage status={status} message={message} />
 
                 <FormInput
@@ -149,13 +158,19 @@ const InterestModal = ({ step, isOpen, onClose }: InterestModalProps) => {
                   onChange={handleFieldChange("email")}
                 />
 
-                <div className="flex flex-col gap-2">
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column" as const,
+                    gap: "0.5rem",
+                  }}
+                >
                   <label
                     style={{
                       fontFamily: "var(--font-mono)",
                       fontSize: "10px",
                       letterSpacing: "0.12em",
-                      textTransform: "uppercase",
+                      textTransform: "uppercase" as const,
                       color: "var(--text-muted)",
                     }}
                   >

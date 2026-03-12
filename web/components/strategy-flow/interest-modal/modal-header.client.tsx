@@ -12,15 +12,33 @@ interface ModalHeaderProps {
 const ModalHeader = ({ step, isLoading, onClose }: ModalHeaderProps) => {
   return (
     <div
-      className="flex items-start justify-between px-8 py-6"
-      style={{ borderBottom: "1px solid var(--border)" }}
+      style={{
+        display: "flex",
+        alignItems: "flex-start",
+        justifyContent: "space-between",
+        padding: "2rem 2.5rem 1.5rem 2.5rem",
+        borderBottom: "1px solid var(--border)",
+      }}
     >
-      <div className="flex flex-col gap-2">
-        <div className="flex items-center gap-2">
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column" as const,
+          gap: "0.5rem",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "0.5rem",
+          }}
+        >
           <div
             style={{
               width: "6px",
               height: "6px",
+              flexShrink: 0,
               backgroundColor: step.accentColor,
             }}
           />
@@ -29,13 +47,14 @@ const ModalHeader = ({ step, isLoading, onClose }: ModalHeaderProps) => {
               fontFamily: "var(--font-mono)",
               fontSize: "10px",
               letterSpacing: "0.15em",
-              textTransform: "uppercase",
+              textTransform: "uppercase" as const,
               color: step.accentColor,
             }}
           >
             {step.step} — {step.title}
           </span>
         </div>
+
         <h3
           style={{
             fontFamily: "var(--font-mono)",
@@ -43,9 +62,10 @@ const ModalHeader = ({ step, isLoading, onClose }: ModalHeaderProps) => {
             fontWeight: 700,
             color: "var(--text-primary)",
             letterSpacing: "-0.02em",
+            margin: 0,
           }}
         >
-          Im Interested
+          I&apos;m Interested
         </h3>
       </div>
 
@@ -61,12 +81,14 @@ const ModalHeader = ({ step, isLoading, onClose }: ModalHeaderProps) => {
           fontFamily: "var(--font-mono)",
           fontSize: "10px",
           letterSpacing: "0.12em",
-          textTransform: "uppercase",
+          textTransform: "uppercase" as const,
           padding: "0.5rem 0.875rem",
           border: "1px solid var(--border-bright)",
           backgroundColor: "transparent",
           color: "var(--text-muted)",
           cursor: isLoading ? "not-allowed" : "pointer",
+          flexShrink: 0,
+          marginLeft: "1rem",
         }}
       >
         ESC

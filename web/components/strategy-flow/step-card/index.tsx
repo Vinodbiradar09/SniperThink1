@@ -79,25 +79,27 @@ const StepCard = ({
       <motion.div
         whileHover={{
           borderColor: step.accentColor,
-          boxShadow: `0 0 30px ${step.accentColor}15`,
+          boxShadow: `0 0 40px ${step.accentColor}12`,
           transition: { duration: 0.25 },
         }}
-        className="relative flex flex-col px-6 lg:px-10 pb-8"
         style={{
+          position: "relative",
           backgroundColor: "var(--surface)",
           border: "1px solid var(--border)",
           overflow: "hidden",
+          padding: "2rem 2.5rem",
+          display: "flex",
+          flexDirection: "column" as const,
+          gap: "1.5rem",
         }}
       >
         <StepAccentLine accentColor={step.accentColor} isInView={isInView} />
 
-        <div className="pt-6">
-          <StepNumber
-            step={step.step}
-            accentColor={step.accentColor}
-            isInView={isInView}
-          />
-        </div>
+        <StepNumber
+          step={step.step}
+          accentColor={step.accentColor}
+          isInView={isInView}
+        />
 
         <StepContent
           title={step.title}

@@ -42,30 +42,40 @@ const StrategyFlowClient = ({ steps }: StrategyFlowClientProps) => {
         }}
       >
         <div className="container">
-          <ProgressIndicator
-            steps={steps}
-            activeStep={activeStep}
-            progressHeight={progressHeight}
-            progressOpacity={progressOpacity}
-          />
-
           <div
             style={{
-              display: "flex",
-              flexDirection: "column" as const,
-              gap: "1.25rem",
-              marginTop: "2rem",
+              display: "grid",
+              gridTemplateColumns: "200px 1fr",
+              gap: "5rem",
+              alignItems: "start",
             }}
           >
-            {steps.map((step, index) => (
-              <StepCard
-                key={step.id}
-                step={step}
-                index={index}
-                onInterestClick={handleInterestClick}
-                onInView={handleStepInView}
+            <div>
+              <ProgressIndicator
+                steps={steps}
+                activeStep={activeStep}
+                progressHeight={progressHeight}
+                progressOpacity={progressOpacity}
               />
-            ))}
+            </div>
+
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column" as const,
+                gap: "1.25rem",
+              }}
+            >
+              {steps.map((step, index) => (
+                <StepCard
+                  key={step.id}
+                  step={step}
+                  index={index}
+                  onInterestClick={handleInterestClick}
+                  onInView={handleStepInView}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>

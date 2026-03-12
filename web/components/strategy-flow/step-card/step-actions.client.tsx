@@ -15,8 +15,13 @@ const StepActions = ({ step, isInView, onInterestClick }: StepActionsProps) => {
       initial={{ opacity: 0, y: 10 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
       transition={{ duration: 0.4, delay: 0.55 }}
-      className="flex items-center justify-between pt-4"
-      style={{ borderTop: "1px solid var(--border)" }}
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        paddingTop: "1.5rem",
+        borderTop: "1px solid var(--border)",
+      }}
     >
       <motion.button
         onClick={() => onInterestClick(step)}
@@ -24,14 +29,14 @@ const StepActions = ({ step, isInView, onInterestClick }: StepActionsProps) => {
           background: "linear-gradient(135deg, #00d4aa 0%, #0099ff 100%)",
           color: "#000000",
           borderColor: "transparent",
-          transition: { duration: 0.2 },
         }}
         whileTap={{ scale: 0.97 }}
+        transition={{ duration: 0.2 }}
         style={{
           fontFamily: "var(--font-mono)",
           fontSize: "11px",
           letterSpacing: "0.12em",
-          textTransform: "uppercase",
+          textTransform: "uppercase" as const,
           padding: "0.75rem 1.5rem",
           border: "1px solid var(--border-bright)",
           backgroundColor: "transparent",
@@ -42,22 +47,19 @@ const StepActions = ({ step, isInView, onInterestClick }: StepActionsProps) => {
         Im Interested
       </motion.button>
 
-      <motion.span
-        whileHover={{ color: step.accentColor }}
-        transition={{ duration: 0.2 }}
+      <span
         style={{
           fontFamily: "var(--font-mono)",
           fontSize: "11px",
           letterSpacing: "0.12em",
-          textTransform: "uppercase",
+          textTransform: "uppercase" as const,
           color: "var(--text-muted)",
           border: "1px solid var(--border)",
           padding: "0.4rem 0.875rem",
-          cursor: "default",
         }}
       >
         {step.title}
-      </motion.span>
+      </span>
     </motion.div>
   );
 };

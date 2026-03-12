@@ -19,7 +19,14 @@ const StepContent = ({
   watermarkNumber,
 }: StepContentProps) => {
   return (
-    <div className="relative flex flex-col gap-4 py-6">
+    <div
+      style={{
+        position: "relative",
+        display: "flex",
+        flexDirection: "column" as const,
+        gap: "0.875rem",
+      }}
+    >
       <span
         style={{
           position: "absolute",
@@ -27,14 +34,14 @@ const StepContent = ({
           right: "0",
           transform: "translateY(-50%)",
           fontFamily: "var(--font-mono)",
-          fontSize: "clamp(5rem, 12vw, 9rem)",
+          fontSize: "clamp(4rem, 10vw, 8rem)",
           fontWeight: 700,
           color: "var(--text-dim)",
           lineHeight: 1,
-          userSelect: "none",
-          pointerEvents: "none",
+          userSelect: "none" as const,
+          pointerEvents: "none" as const,
           letterSpacing: "-0.05em",
-          opacity: 0.4,
+          opacity: 0.5,
         }}
       >
         {watermarkNumber}
@@ -46,13 +53,14 @@ const StepContent = ({
         transition={{ duration: 0.5, delay: 0.25 }}
         style={{
           fontFamily: "var(--font-mono)",
-          fontSize: "clamp(1.75rem, 4vw, 2.75rem)",
+          fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)",
           fontWeight: 700,
           color: "var(--text-primary)",
           letterSpacing: "-0.02em",
           lineHeight: 1.1,
           position: "relative",
           zIndex: 1,
+          margin: 0,
         }}
       >
         {title}
@@ -65,10 +73,12 @@ const StepContent = ({
         style={{
           fontFamily: "var(--font-sans)",
           fontSize: "1.0625rem",
+          fontWeight: 500,
           color: "var(--text-primary)",
           lineHeight: 1.5,
           position: "relative",
           zIndex: 1,
+          margin: 0,
         }}
       >
         {description}
@@ -85,6 +95,7 @@ const StepContent = ({
           lineHeight: 1.7,
           position: "relative",
           zIndex: 1,
+          margin: 0,
         }}
       >
         {detail}
