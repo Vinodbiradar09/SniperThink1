@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import { Space_Mono, DM_Sans } from "next/font/google";
+import type { Metadata } from "next";
 import "./globals.css";
 
 const spaceMono = Space_Mono({
@@ -17,7 +17,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "SniperThink — Growth Operating System",
+  title: "SniperThink | Growth Operating System",
   description:
     "SniperThink brings intelligence, automation and direction. So you can focus on growth, not guesswork.",
 };
@@ -28,10 +28,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${spaceMono.variable} ${dmSans.variable} antialiased`}>
-        {children}
-      </body>
+    <html lang="en" className={`${spaceMono.variable} ${dmSans.variable}`}>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }

@@ -10,10 +10,12 @@ const postInterest = async (data: InterestFormData): Promise<ApiResponse> => {
     },
     body: JSON.stringify(data),
   });
+
   if (!response.ok) {
     const error: ApiResponse = await response.json();
-    throw new Error(error.message ?? "internal server error");
+    throw new Error(error.message ?? "something went wrong");
   }
+
   const result: ApiResponse = await response.json();
   return result;
 };

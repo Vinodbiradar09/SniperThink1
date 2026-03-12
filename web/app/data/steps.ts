@@ -7,8 +7,9 @@ const steps: Step[] = [
     title: "Analyze",
     description: "See exactly where you are and where you're stuck.",
     detail:
-      "Connect your tools and uncover insights. From KPIs to lead flows, SniperThink shows you where you are—and where you're stuck. No more guessing, no more delayed decisions.",
+      "Connect your tools and uncover insights. From KPIs to lead flows, SniperThink shows you where you are and where you're stuck. No more guessing, no more delayed decisions.",
     animationVariant: "slideLeft",
+    accentColor: "#00d4aa",
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ const steps: Step[] = [
     detail:
       "Automate alerts, reports, responses, and lead qualification without sacrificing control. Your systems run 24/7 so your team doesn't have to.",
     animationVariant: "slideRight",
+    accentColor: "#0099ff",
   },
   {
     id: 3,
@@ -27,6 +29,7 @@ const steps: Step[] = [
     detail:
       "With smart signals and agent-driven outreach, your team focuses only where it counts. Act faster, scale smoother — precision over volume.",
     animationVariant: "scaleUp",
+    accentColor: "#00d4aa",
   },
   {
     id: 4,
@@ -34,8 +37,9 @@ const steps: Step[] = [
     title: "Align",
     description: "Every decision, team, and system — one direction.",
     detail:
-      "Bring clarity to every business decision before it's too late. SniperThink aligns your data, your agents, and your team into a single growth direction.",
+      "Bring clarity to every business decision before it is too late. SniperThink aligns your data, your agents, and your team into a single growth direction.",
     animationVariant: "rotateIn",
+    accentColor: "#0099ff",
   },
 ];
 

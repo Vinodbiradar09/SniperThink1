@@ -5,6 +5,7 @@ interface Step {
   description: string;
   detail: string;
   animationVariant: "slideLeft" | "slideRight" | "scaleUp" | "rotateIn";
+  accentColor: string;
 }
 
 interface InterestFormData {

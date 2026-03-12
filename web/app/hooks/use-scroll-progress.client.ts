@@ -7,6 +7,7 @@ interface ScrollProgressResult {
   containerRef: React.RefObject<HTMLDivElement>;
   scrollYProgress: MotionValue<number>;
   progressHeight: MotionValue<string>;
+  progressOpacity: MotionValue<number>;
 }
 
 const useScrollProgress = (): ScrollProgressResult => {
@@ -19,10 +20,17 @@ const useScrollProgress = (): ScrollProgressResult => {
 
   const progressHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
+  const progressOpacity = useTransform(
+    scrollYProgress,
+    [0, 0.05, 0.95, 1],
+    [0, 1, 1, 0],
+  );
+
   return {
     containerRef,
     scrollYProgress,
     progressHeight,
+    progressOpacity,
   };
 };
 
