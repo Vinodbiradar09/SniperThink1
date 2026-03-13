@@ -8,7 +8,7 @@ const createHttpServer = (): Express => {
   const app = express();
   app.use(
     cors({
-      origin: "http://localhost:3000",
+      origin: process.env.WEB ?? "http://localhost:3000",
     }),
   );
   app.use(express.json());
